@@ -11,6 +11,7 @@ from langchain_core.documents import Document
 class AgentState(TypedDict):
     """Shared state passed between all LangGraph agent nodes."""
 
+    session_id: Optional[str]
     question: str
     documents: List[Document]
     generation: str
@@ -32,6 +33,7 @@ class AgentState(TypedDict):
 def initialize_conversation_state() -> AgentState:
     """Return a fresh AgentState with all fields at their defaults."""
     return {
+        "session_id": None,
         "question": "",
         "documents": [],
         "generation": "",

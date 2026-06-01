@@ -44,6 +44,7 @@ class ChatService:
         state = self.conversation_states[session_id]
         state = reset_query_state(state)
         state["question"] = message
+        state["session_id"] = session_id
 
         # Run workflow (async preferred, sync fallback)
         try:
@@ -56,9 +57,6 @@ class ChatService:
 
         response_text = result.get("generation", "Unable to generate response.")
         source = result.get("source", "Unknown")
-
-        # Persist assistant response
-        db_service.save_message(session_id, "assistant", response_text, source)
 
         return {
             "response": response_text,

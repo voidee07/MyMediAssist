@@ -21,15 +21,21 @@ def load_pdf(pdf_path: str) -> List[Document]:
 
 
 def split_documents(docs: List[Document]) -> List[Document]:
-    """Split documents into overlapping chunks using tiktoken-aware splitter."""
-    from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-    splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        chunk_size=512,
-        chunk_overlap=128,
-        separators=["\n\n", ". ", "\n", " "],
-    )
-    splits = splitter.split_documents(docs)
+    """Split documents into overlapping chunks using a simple character splitter.
+    This avoids heavy dependencies like sentence_transformers.
+    """
+    splits: List[Document] = []
+    chunk_size = 512
+    overlap = 128
+    for doc in docs:
+        text = doc.page_content
+        start = 0
+        while start < len(text):
+            end = start + chunk_size
+            chunk_text = text[start:end]
+            # Preserve original metadata
+            splits.append(Document(page_content=chunk_text, metadata=doc.metadata))
+            start += chunk_size - overlap
     logger.info("Split into %d chunks", len(splits))
     return splits
 

@@ -9,16 +9,14 @@ from app.agents.llm_agent import LLMAgent
 from app.agents.memory import MemoryAgent
 from app.agents.planner import PlannerAgent
 from app.agents.retriever import RetrieverAgent
-from app.agents.tavily import TavilyAgent
-from app.agents.wikipedia import WikipediaAgent
+from app.agents.evaluation import EvaluationAgent
 
 __all__ = [
     "MemoryAgent",
     "PlannerAgent",
     "RetrieverAgent",
     "LLMAgent",
-    "WikipediaAgent",
-    "TavilyAgent",
     "ExecutorAgent",
     "ExplanationAgent",
+    "EvaluationAgent",
 ]

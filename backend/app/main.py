@@ -43,9 +43,12 @@ async def lifespan(app: FastAPI):
 
     if os.path.exists(PDF_PATH):
         logger.info("Processing PDF: %s", PDF_PATH)
-        documents = process_pdf(PDF_PATH)
-        get_or_create_vectorstore(documents)
-        logger.info("Vector store ready at %s", VECTOR_STORE_DIR)
+        try:
+            documents = process_pdf(PDF_PATH)
+            get_or_create_vectorstore(documents)
+            logger.info("Vector store ready at %s", VECTOR_STORE_DIR)
+        except Exception as e:
+            logger.error("Failed to process PDF or create vector store: %s", e)
     else:
         logger.warning("PDF not found at %s — vector store skipped", PDF_PATH)
 
