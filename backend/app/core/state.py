@@ -22,10 +22,7 @@ class AgentState(TypedDict):
     llm_success: bool
     rag_attempted: bool
     rag_success: bool
-    wiki_attempted: bool
-    wiki_success: bool
-    tavily_attempted: bool
-    tavily_success: bool
+    
     current_tool: Optional[str]
     retry_count: int
 
@@ -44,10 +41,7 @@ def initialize_conversation_state() -> AgentState:
         "llm_success": False,
         "rag_attempted": False,
         "rag_success": False,
-        "wiki_attempted": False,
-        "wiki_success": False,
-        "tavily_attempted": False,
-        "tavily_success": False,
+       
         "current_tool": None,
         "retry_count": 0,
     }
@@ -66,10 +60,7 @@ def reset_query_state(state: AgentState) -> AgentState:
             "llm_success": False,
             "rag_attempted": False,
             "rag_success": False,
-            "wiki_attempted": False,
-            "wiki_success": False,
-            "tavily_attempted": False,
-            "tavily_success": False,
+            
             "current_tool": None,
             "retry_count": 0,
         }

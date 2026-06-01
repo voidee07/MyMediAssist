@@ -3,12 +3,10 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "medigenius-backend"
+name = "my-medi-genius-backend"
 version = "3.0.0"
 description = "AI-powered medical assistant backend"
-authors = [
-    {name = "Md. Hasan Imon", email = "codix@example.com"},
-]
+
 requires-python = ">=3.10"
 dependencies = [
     "fastapi==0.128.0",
