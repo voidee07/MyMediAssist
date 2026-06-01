@@ -6,7 +6,7 @@ ChatService: orchestrates the LangGraph agentic workflow for each chat message.
 from datetime import datetime
 from typing import Any, Dict
 
-from app.core.langgraph_workflow import create_workflow
+# import moved inside initialize_workflow to avoid circular import
 from app.core.logging_config import logger
 from app.core.state import initialize_conversation_state, reset_query_state
 from app.services.database_service import db_service
@@ -24,6 +24,7 @@ class ChatService:
         """Compile and cache the LangGraph workflow (called once at startup)."""
         if not self.workflow_app:
             logger.info("Initializing LangGraph workflow...")
+            from app.core.langgraph_workflow import create_workflow  # lazy import
             self.workflow_app = create_workflow()
             logger.info("LangGraph workflow initialized successfully")
 

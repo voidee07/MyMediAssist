@@ -3,6 +3,7 @@ MediGenius — core/langgraph_workflow.py
 LangGraph StateGraph definition and workflow factory for linear execution.
 """
 
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, StateGraph
 
 from app.agents.executor import ExecutorAgent
