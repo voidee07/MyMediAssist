@@ -1,21 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-      }
-    }
+  css: {
+    // Explicitly point to the PostCSS config we fixed
+    postcss: './postcss.config.cjs',
   },
-  test: {
-    globals: true,
-    environment: 'happy-dom',
-    setupFiles: './src/setupTests.js',
-    css: false,
-  },
-})
+});
