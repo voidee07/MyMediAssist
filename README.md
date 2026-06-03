@@ -1,3 +1,5 @@
+
+
 # MediGenius
 
 MediGenius is an advanced, AI-powered medical consultation assistant. It combines a modular, agentic LangGraph workflow on the backend with a sleek, responsive dark-themed React SPA on the frontend. The system processes medical documents (RAG) and uses search tools (like Tavily and Wikipedia) to generate precise, database-backed medical consultation advice.
@@ -102,6 +104,10 @@ python -m venv .venv
 # Mac/Linux
 python3 -m venv .venv
 source .venv/bin/activate
+
+https://github.com/user-attachments/assets/da50f016-1f87-40b6-a9b0-78b8bdab9e77
+
+
 ```
 Install the required dependencies:
 ```bash
@@ -128,3 +134,12 @@ Start the Vite development server:
 npm run dev
 ```
 Open **`http://localhost:5173`** in your browser to interact with MediGenius.
+
+
+
+
+
+
+https://github.com/user-attachments/assets/2baf8578-b93a-4d35-9be0-5f7bf633d4c0
+
+
