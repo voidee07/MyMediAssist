@@ -2,7 +2,7 @@
 
 # MediGenius
 
-MediGenius is an advanced, AI-powered medical consultation assistant. It combines a modular, agentic LangGraph workflow on the backend with a sleek, responsive dark-themed React SPA on the frontend. The system processes medical documents (RAG) and uses search tools (like Tavily and Wikipedia) to generate precise, database-backed medical consultation advice.
+MediGenius is an advanced, AI-powered medical consultation assistant. It combines a modular, agentic LangGraph workflow on the backend with a sleek, responsive dark-themed React SPA on the frontend. The system processes medical documents (RAG) to generate precise, database-backed medical consultation advice.
 
 ---
 
