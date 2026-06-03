@@ -69,7 +69,7 @@ const ChatWindow: React.FC = () => {
 
   if (messages.length === 0) {
     return (
-      <div className="flex-1 w-full flex flex-col items-center justify-center max-w-4xl mx-auto px-6 py-12 text-center">
+      <div className="flex-1 w-full flex flex-col items-center justify-center max-w-5xl self-center px-6 py-12 text-center">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
           MediGenius Clinical Assistant
         </h2>
@@ -77,7 +77,7 @@ const ChatWindow: React.FC = () => {
           Consult our medical knowledge base, check symptoms, or research drug mechanisms.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 w-full max-w-3xl">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 w-full max-w-5xl">
           <button
             onClick={() => handlePresetClick('What are the symptoms and stages of Hypertension?')}
             className="flex flex-col items-center justify-center min-h-[130px] p-6 text-center border border-gray-200 dark:border-gray-800 hover:border-emerald-500 dark:hover:border-emerald-600 bg-white dark:bg-gray-900 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
