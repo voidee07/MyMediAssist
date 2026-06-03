@@ -61,8 +61,8 @@ const AppContent: React.FC = () => {
         </div>
 
         {/* Sessions List */}
-        <div className="flex-1 overflow-y-auto px-3 space-y-1 py-2">
-          <div className="px-3 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">
+        <div className="flex-1 overflow-y-auto px-3 space-y-2 py-3">
+          <div className="px-3 text-xs font-semibold text-gray-400 dark:text-gray-550 uppercase tracking-wider mb-3 mt-1">
             History
           </div>
           {sessions.length === 0 ? (
@@ -135,41 +135,43 @@ const AppContent: React.FC = () => {
                 </>
               )}
             </div>
-            <span className="text-xs text-gray-400 dark:text-gray-500 bg-gray-200/50 dark:bg-slate-800 px-1.5 py-0.5 rounded">Tab</span>
+            <span className="text-xs text-gray-400 dark:text-gray-550 bg-gray-200/50 dark:bg-slate-800 px-1.5 py-0.5 rounded">Tab</span>
           </button>
         </div>
       </aside>
 
       {/* Main Workspace */}
-      <div className="flex-1 flex flex-col h-full w-full min-w-0 bg-slate-50 dark:bg-slate-950">
+      <div className="flex-1 flex flex-col h-full min-w-0 bg-slate-50 dark:bg-slate-950">
         {/* Workspace Header */}
         <header className="flex h-16 shrink-0 items-center justify-between border-b border-gray-200 dark:border-gray-900 bg-white dark:bg-slate-900/40 backdrop-blur-md px-6 z-10">
-          <div className="flex items-center gap-3">
-            {/* Sidebar Toggle (Mobile only) */}
-            <button
-              onClick={() => setSidebarOpen(true)}
-              className="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 md:hidden border border-gray-200 dark:border-gray-800 rounded-lg cursor-pointer"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-              </svg>
-            </button>
-            
-            <div>
-              <h1 className="text-sm md:text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                Clinical Consult Agent
-                <span className="inline-flex items-center shrink-0 rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/50">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span>
-                  Active
-                </span>
-              </h1>
+          <div className="flex w-full max-w-5xl mx-auto items-center justify-between">
+            <div className="flex items-center gap-3">
+              {/* Sidebar Toggle (Mobile only) */}
+              <button
+                onClick={() => setSidebarOpen(true)}
+                className="p-1.5 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 md:hidden border border-gray-200 dark:border-gray-800 rounded-lg cursor-pointer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                </svg>
+              </button>
+              
+              <div>
+                <h1 className="text-sm md:text-base font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+                  Clinical Consult Agent
+                  <span className="inline-flex items-center shrink-0 rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/50">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1 animate-pulse"></span>
+                    Active
+                  </span>
+                </h1>
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center space-x-4">
-            <span className="hidden md:inline text-xs text-gray-400 dark:text-gray-500 font-medium">
-              Source: Medical Library
-            </span>
+            <div className="flex items-center space-x-4">
+              <span className="hidden md:inline text-xs text-gray-450 dark:text-gray-500 font-medium">
+                Source: Medical Library
+              </span>
+            </div>
           </div>
         </header>
 
