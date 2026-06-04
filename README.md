@@ -55,7 +55,10 @@ The backend is built with **Python/FastAPI** and orchestrates the agentic workfl
 
 > Watch MediGenius in action — from asking about symptoms to receiving evidence-based medical consultation responses.
 
-https://github.com/user-attachments/assets/2baf8578-b93a-4d35-9be0-5f7bf633d4c0
+
+
+https://github.com/user-attachments/assets/4d582c84-ac7d-4b53-8ce2-a597042bd0fa
+
 
 ---
 
