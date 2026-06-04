@@ -314,13 +314,12 @@ cp .env.example .env
 Open `.env` and fill in your API keys:
 
 ```env
+# MediGenius Configuration
+
 # LLM Provider Key (Groq) — Get yours free at https://console.groq.com
 GROQ_API_KEY=your_groq_api_key_here
 
-# Search API Key (Tavily) — Optional, for future web search features
-TAVILY_API_KEY=your_tavily_api_key_here
-
-# SQLite Database URL (auto-configured)
+# SQLite Chat History Database Connection URL
 DATABASE_URL=sqlite:///./backend/database/medigenius.db
 ```
 
