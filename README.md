@@ -29,7 +29,7 @@
 - [Quick Start](#-quick-start)
 - [User Journey](#-user-journey)
 - [API Reference](#-api-reference)
-- [Contributing](#-contributing)
+- [Future Extensions](#-future-extensions)
 - [License](#-license)
 
 ---
@@ -65,7 +65,7 @@ https://github.com/user-attachments/assets/2baf8578-b93a-4d35-9be0-5f7bf633d4c0
 |---|---|
 | 🤖 **Agentic LangGraph Pipeline** | 6-node linear workflow: Planner → Retriever → Evaluation → Explanation → Executor → Memory |
 | 📚 **RAG from Medical Literature** | Indexes PDF medical textbooks into a ChromaDB vector store for semantic retrieval |
-| 🧭 **Intelligent Query Routing** | Planner agent classifies queries using medical keyword detection to decide RAG vs. direct LLM |
+| 🧭 **Query Classification** | Planner agent classifies queries using medical keyword detection (prepared for future dynamic routing) |
 | 💾 **Persistent Chat Sessions** | SQLite-backed message history with full CRUD session management |
 | 🌗 **Dark / Light Theme** | Toggle between themes with a single click; preference persists across sessions |
 | 📱 **Responsive Design** | Mobile-first layout with collapsible sidebar navigation |
@@ -111,7 +111,6 @@ graph TB
             LLM["LLM Client<br/><i>Groq / Llama 3.3</i>"]
             VS["Vector Store<br/><i>ChromaDB</i>"]
             PDF["PDF Loader<br/><i>PyPDF</i>"]
-            DDG["Web Search<br/><i>DuckDuckGo</i>"]
         end
 
         API --> CS --> Agents
@@ -160,7 +159,7 @@ flowchart LR
 
 | Node | Agent | Role |
 |---|---|---|
-| 1 | **Planner** | Scans the user's question for medical keywords (symptoms, conditions, treatments, body parts). Routes to `retriever` for medical queries or `llm_agent` for general questions. |
+| 1 | **Planner** | Scans the user's question for medical keywords (symptoms, conditions, treatments, body parts) and logs query classification (prepared for future dynamic routing). |
 | 2 | **Retriever** | Queries the ChromaDB vector store with a context-enriched search (includes last 3 user messages). Filters out documents shorter than 50 characters. |
 | 3 | **Evaluation** | Uses the LLM to assess whether retrieved documents are actually relevant to the user's question. Outputs `RELEVANT: Yes/No` with reasoning. |
 | 4 | **Explanation** | Reserved for future post-processing logic (currently a pass-through). |
@@ -194,14 +193,6 @@ flowchart LR
 | **[TypeScript](https://www.typescriptlang.org)** | Type safety | Catches type errors at compile-time; improves developer experience & code quality |
 | **[Vite](https://vite.dev)** | Build tool & dev server | Instant HMR, lightning-fast cold starts; modern ESM-based bundler |
 | **[Tailwind CSS 4](https://tailwindcss.com)** | Utility-first CSS | Rapid prototyping, consistent design tokens, zero CSS file bloat |
-
-### DevOps & Tooling
-
-| Tool | Purpose |
-|---|---|
-| **pytest + pytest-cov** | Unit testing with coverage reporting |
-| **flake8 + isort + black** | Linting, import sorting, and code formatting |
-| **python-dotenv** | Environment variable management from `.env` files |
 
 ---
 
@@ -487,28 +478,11 @@ curl -X POST http://localhost:8000/api/v1/chat \
 
 ---
 
-## 🤝 Contributing
+## 🔮 Future Extensions
 
-Contributions are welcome! Here's how to get started:
-
-1. **Fork** the repository
-2. **Create** a feature branch: `git checkout -b feature/your-feature`
-3. **Commit** your changes: `git commit -m "Add your feature"`
-4. **Push** to the branch: `git push origin feature/your-feature`
-5. **Open** a Pull Request
-
-### Development Tools
-
-```bash
-# Run backend tests with coverage
-cd backend
-pytest --cov=app
-
-# Lint & format
-flake8 app/
-isort app/
-black app/
-```
+As a personal project, the roadmap includes several exciting features:
+- **Web Search Integration**: Integrate DuckDuckGo or Tavily API to fetch real-time medical updates/news when vector database retrieval falls short.
+- **Dynamic Workflow Routing**: Utilize the Planner's classification output to dynamically branch execution (e.g. routing non-medical queries directly to the `LLMAgent` to bypass the retriever and evaluator for faster responses).
 
 ---
 
