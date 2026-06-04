@@ -71,7 +71,7 @@ const ChatWindow: React.FC = () => {
     return (
       <div className="flex-1 w-full flex flex-col items-center justify-center max-w-5xl self-center px-6 py-12 text-center">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-          MediGenius Clinical Assistant
+          MediAssist Clinical Assistant
         </h2>
         <p className="mt-3 text-sm md:text-base text-gray-550 dark:text-gray-400 max-w-xl">
           Consult our medical knowledge base, check symptoms, or research drug mechanisms.

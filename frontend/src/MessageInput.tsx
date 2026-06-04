@@ -103,7 +103,7 @@ const MessageInput: React.FC = () => {
         </button>
       </div>
       <p className="text-center text-[10px] text-gray-400 dark:text-gray-500 mt-2 px-4 leading-normal">
-        MediGenius provides medical AI information based on indexed medical books. Always consult a healthcare professional for clinical decisions.
+        MediAssist provides medical AI information based on indexed medical books. Always consult a healthcare professional for clinical decisions.
       </p>
     </div>
   );

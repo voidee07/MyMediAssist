@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🩺 MediGenius
+# 🩺 MediAssist
 
 ### AI-Powered Medical Consultation Assistant
 
@@ -36,13 +36,13 @@
 
 ## 🧠 About the Project
 
-**MediGenius** is a full-stack, AI-powered medical consultation assistant that acts as a clinical consult agent. It ingests medical reference documents (PDFs) and builds a searchable vector knowledge base using **Retrieval-Augmented Generation (RAG)**. When a user asks a medical question, the system intelligently routes the query through a **6-node LangGraph agentic pipeline** — planning, retrieving, evaluating, explaining, executing, and memorizing — to deliver precise, evidence-backed medical advice.
+**MediAssist** is a full-stack, AI-powered medical consultation assistant that acts as a clinical consult agent. It ingests medical reference documents (PDFs) and builds a searchable vector knowledge base using **Retrieval-Augmented Generation (RAG)**. When a user asks a medical question, the system intelligently routes the query through a **6-node LangGraph agentic pipeline** — planning, retrieving, evaluating, explaining, executing, and memorizing — to deliver precise, evidence-backed medical advice.
 
 The backend is built with **Python/FastAPI** and orchestrates the agentic workflow using **LangGraph** (a stateful graph framework for multi-step LLM applications). The frontend is a modern **React + TypeScript** SPA styled with **Tailwind CSS**, featuring a responsive dark/light theme, session management sidebar, and a premium chat interface.
 
 ### What Makes It Different?
 
-| Traditional Chatbot | MediGenius Agentic Approach |
+| Traditional Chatbot | MediAssist Agentic Approach |
 |---|---|
 | Single LLM call, no context | 6-stage pipeline with planning, retrieval, and evaluation |
 | No source verification | RAG from indexed medical literature with source attribution |
@@ -53,7 +53,7 @@ The backend is built with **Python/FastAPI** and orchestrates the agentic workfl
 
 ## 🎬 Demo
 
-> Watch MediGenius in action — from asking about symptoms to receiving evidence-based medical consultation responses.
+> Watch MediAssist in action — from asking about symptoms to receiving evidence-based medical consultation responses.
 
 
 
@@ -135,7 +135,7 @@ graph TB
 
 ### Agentic Workflow — Step by Step
 
-The heart of MediGenius is a **LangGraph StateGraph** that processes every user query through a deterministic, linear pipeline of 6 agent nodes:
+The heart of MediAssist is a **LangGraph StateGraph** that processes every user query through a deterministic, linear pipeline of 6 agent nodes:
 
 ```mermaid
 flowchart LR
@@ -202,7 +202,7 @@ flowchart LR
 ## 📂 Folder Structure
 
 ```
-MYMediGenius/
+MyMediAssist/
 ├── backend/                          # ⚙️ Python FastAPI Backend
 │   ├── app/
 │   │   ├── agents/                   # 🧠 LangGraph agentic workflow nodes
@@ -317,13 +317,13 @@ cp .env.example .env
 Open `.env` and fill in your API keys:
 
 ```env
-# MediGenius Configuration
+# MediAssist Configuration
 
 # LLM Provider Key (Groq) — Get yours free at https://console.groq.com
 GROQ_API_KEY=your_groq_api_key_here
 
 # SQLite Chat History Database Connection URL
-DATABASE_URL=sqlite:///./backend/database/medigenius.db
+DATABASE_URL=sqlite:///./backend/database/MediAssist.db
 ```
 
 > **💡 Tip:** You only need a **Groq API key** to get started. Sign up at [console.groq.com](https://console.groq.com) — free tier includes generous usage limits.
@@ -391,11 +391,11 @@ Navigate to **[http://localhost:5173](http://localhost:5173)** to start your med
 
 ## 👤 User Journey
 
-A step-by-step walkthrough of how a user interacts with MediGenius:
+A step-by-step walkthrough of how a user interacts with MediAssist:
 
 ```mermaid
 journey
-    title MediGenius User Journey
+    title MediAssist User Journey
     section Getting Started
       Open the app in browser: 5: User
       See the welcome screen with preset queries: 5: User
@@ -414,7 +414,7 @@ journey
 
 ### Detailed User Flow
 
-1. **🏠 Landing Screen** — The user opens `http://localhost:5173` and is greeted with a clean, modern interface showing the MediGenius branding and **4 preset medical query cards**:
+1. **🏠 Landing Screen** — The user opens `http://localhost:5173` and is greeted with a clean, modern interface showing the MediAssist branding and **4 preset medical query cards**:
    - *"What are the symptoms and stages of Hypertension?"*
    - *"What is the mechanism of action of Ibuprofen?"*
    - *"Search the medical book for Asthma treatment guidelines"*
@@ -498,6 +498,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Built with ❤️ using LangGraph, FastAPI, and React**
 
-*⚠️ MediGenius provides AI-generated medical information for educational purposes only. Always consult a qualified healthcare professional for clinical decisions.*
+*⚠️ MediAssist provides AI-generated medical information for educational purposes only. Always consult a qualified healthcare professional for clinical decisions.*
 
 </div>
